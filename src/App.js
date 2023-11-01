@@ -1,19 +1,21 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import Nav from "./components/Nav/Nav";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Redirect from "./pages/Redirect";
+import Tenders from "./pages/Tenders";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
     <div className="App">
       {localStorage.getItem("token") ? (
         <>
-          <Nav />
+          <Nav/>
           <Routes>
             <Route path="/" index element={<Home />} />
+            <Route path="/tenders" element={<Tenders />} />
           </Routes>
         </>
       ) : (

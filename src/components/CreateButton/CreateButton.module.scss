@@ -1,0 +1,13 @@
+.CreateButton{
+  color: #fff;
+  background-color: #4b4b4b;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: .5s;
+  &:hover{
+    background-color: #343434;
+  }
+}
