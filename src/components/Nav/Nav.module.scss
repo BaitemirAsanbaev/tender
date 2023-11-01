@@ -1,0 +1,21 @@
+.Nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #6499E9;
+  a{
+    margin: 0 10px;
+    padding: 20px 25px;
+    font-size: 18px;
+    border-radius: 20px;
+    transition: .5s background-color;
+    &:hover{
+      background-color: #6499E9;
+      color: #fff;
+      
+    }
+  }
+  .logo{
+    font-size: 24px;
+  }
+}

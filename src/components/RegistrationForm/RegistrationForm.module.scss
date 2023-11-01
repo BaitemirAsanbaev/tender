@@ -1,0 +1,123 @@
+/* RegistrationForm.module.scss */
+
+.registration-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  .hide{
+    transform: scaleX(0);
+    transition: .5s;
+    position: absolute;
+    opacity: 0;
+  }
+  .back-side{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #bcdcff;
+    border-radius: 10px;
+    transition: .5s;
+    >div{
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+  .front-side{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #bcdcff;
+    border-radius: 10px;
+    transition: .5s;
+    .photo{
+      background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png');
+      width: 200px;
+      height: 200px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 10px;
+    }
+    .bottom-info{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: light;
+      color: gray;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='checkbox'],
+    select,
+    input[type='date'] {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-bottom: 1px solid gray;
+      border-radius: 3px;
+      background-color: rgb(224, 241, 255);
+    }
+
+    select {
+      height: 34px;
+    }
+  }
+  .turn{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-image: url('./assets/turn.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .agreement-label{
+    padding: 20px;
+  }
+  .disabled{
+    cursor: no-drop;
+    background-color: #ccc;
+    
+    width: 100%;
+    padding: 10px;
+    
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    &:hover{
+      background-color: #ccc;
+    }
+  }
+  .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
