@@ -18,8 +18,8 @@ function Card({ data }) {
         ) : null}
       </div>
       <div className={classes.organization}>
-        <img src="https://mkk.gov.kg/wp-content/uploads/2021/09/c6113c6d-97b6-4ed7-97bc-fda2034700ec.jpg.630x410_q85_crop.jpg" />
-        <span>{data.gos_org}</span>
+        <img src="https://mkk.gov.kg/wp-content/uploads/2021/09/c6113c6d-97b6-4ed7-97bc-fda2034700ec.jpg.630x410_q85_crop.jpg" alt="pfp"/>
+        <span>{data.company}{data.gos_org}</span>
       </div>
     </div>
   );
