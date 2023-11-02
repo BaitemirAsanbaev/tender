@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { data } from "./demo";
-import Slide from "./Slide";
 import classes from "./Swiper.module.scss";
+import Card from "../Card/Card";
 export default () => {
   return (
     <Swiper
@@ -13,7 +13,7 @@ export default () => {
       {data.map((item, id) => {
         return (
           <SwiperSlide key={id}>
-            <Slide data={item} />
+            <Card data={item} />
           </SwiperSlide>
         );
       })}

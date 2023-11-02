@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Redirect from "./pages/Redirect";
 import Tenders from "./pages/Tenders";
 import Nav from "./components/Nav/Nav";
+import Tender from "./pages/Tender";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/tenders" element={<Tenders />} />
+            <Route path="/tender/:id" element={<Tender />} />
           </Routes>
         </>
       ) : (

@@ -1,0 +1,8 @@
+.RequestsList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >div{
+    margin: 20px 0;
+  }
+}
