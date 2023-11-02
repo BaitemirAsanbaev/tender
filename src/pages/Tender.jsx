@@ -7,7 +7,7 @@ import TenderInfo from '../components/TenderInfo/TenderInfo';
 export default function Tender() {
   const params = useParams()
   return (
-    <div className='page' style={{display:"flex"}}>
+    <div className='page' style={{display:"flex", alignItems:"start"}}>
       <TenderInfo info={data[params.id - 1]}/>
       <RequestsList reqs={data[params.id - 1].requests}/>
     </div>
