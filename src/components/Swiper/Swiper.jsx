@@ -9,8 +9,6 @@ export default () => {
       className={classes.Swiper}
       spaceBetween={70}
       slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {data.map((item, id) => {
         return (
