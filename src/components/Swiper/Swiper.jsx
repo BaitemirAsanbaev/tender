@@ -7,14 +7,14 @@ export default () => {
   return (
     <Swiper
       className={classes.Swiper}
-      spaceBetween={50}
+      spaceBetween={70}
       slidesPerView={3}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
       {data.map((item, id) => {
         return (
-          <SwiperSlide className={classes.Slide} key={id}>
+          <SwiperSlide key={id}>
             <Slide data={item} />
           </SwiperSlide>
         );
