@@ -14,17 +14,20 @@ function Tenders() {
             store.user.role === "company"
               ? { role: "goverment" }
               : { role: "company" }
-          );  
+          );
         }}
       >
         Switch
       </button>
-      {store.user.role === "company" ? (
-        <CreateButton>Открыть Тендер</CreateButton>
+      {store.user.role === "goverment" ? (
+        <>
+          <CreateButton>Открыть Тендер</CreateButton>
+          <Swiper />
+        </>
       ) : (
         <Swiper />
       )}
     </div>
   );
 }
-export default observer(Tenders)
+export default observer(Tenders);

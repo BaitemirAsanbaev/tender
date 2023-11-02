@@ -1,0 +1,19 @@
+.RequestForm{
+  display: flex;
+  flex-direction: column;
+  input, textarea{
+    border: 2px solid #4b4b4b;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+  }
+  input[type='file']{
+    border: none;
+  }
+  label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
