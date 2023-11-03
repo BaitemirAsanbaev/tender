@@ -12,7 +12,7 @@ import CreateTender from "./pages/CreateTender";
 function App() {
   return (
     <div className="App">
-      {localStorage.getItem("token") ? (
+      {localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>

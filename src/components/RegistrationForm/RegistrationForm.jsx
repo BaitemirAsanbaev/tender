@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./RegistrationForm.module.scss";
 import axios from "axios";
 import { api } from "../../api";
 import { Link } from "react-router-dom";
+import { Context } from "../..";
 function RegistrationForm() {
   // Define state variables for the registration form
   const [first_name, setFirstName] = useState("");
@@ -23,7 +24,9 @@ function RegistrationForm() {
   const [password, setPassword] = useState("");
   const [side, setSide] = useState("front");
   const [agree, setAgree] = useState(false);
-  // Handle form submission
+  
+const {store} = useContext(Context)
+
   const handleSubmit = (e) => {
     e.preventDefault();
   
@@ -47,11 +50,7 @@ function RegistrationForm() {
       password,
       role:"User"
     };
-    axios.post('http://127.0.0.1:8000/api/v1/register', formData).then((res)=>console.log(res.data))
-    // Store the form data in localStorage
-    // localStorage.setItem("formData", JSON.stringify(formData));
-  
-    // Redirect or perform any other actions as needed
+    store.register(formData);
   };
   
   return (
