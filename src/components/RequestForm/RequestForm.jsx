@@ -14,7 +14,7 @@ export default function RequestForm() {
       <textarea rows={10} type='text' id='description' name='description'/>
       
       <label htmlFor="request">Отклик</label>
-      <input type='file' id='request' name='request'/>
+      <input type='file' id='request' name='request' accept='.pdf'/>
       <BlueButton event={sendRequeset}>Отправить</BlueButton>
     </form>
   )
