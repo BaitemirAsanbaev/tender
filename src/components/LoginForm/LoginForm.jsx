@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './LoginForm.module.scss'; // Import the CSS Module
 import { api } from '../../api';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
   // Define state variables for the email and password
@@ -12,7 +13,7 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can add your login logic here, such as sending a request to your server
-    axios.post(api+'login/', { email, password }).then((res)=>{
+    axios.post('http://127.0.0.1:8000/api/v1/login', { email, password }).then((res)=>{
       localStorage.setItem('access', res.data.access_token)
       // localStorage.setItem('user', {email})
     });
@@ -48,6 +49,7 @@ function LoginForm() {
           Войти
         </button>
       </form>
+      <Link to={"/register"}>Регистрация</Link>
     </div>
   );
 }

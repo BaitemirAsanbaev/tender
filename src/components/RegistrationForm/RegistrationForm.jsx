@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./RegistrationForm.module.scss";
 import axios from "axios";
 import { api } from "../../api";
+import { Link } from "react-router-dom";
 function RegistrationForm() {
   // Define state variables for the registration form
   const [first_name, setFirstName] = useState("");
@@ -44,10 +45,11 @@ function RegistrationForm() {
       email,
       phone_number: phone,
       password,
+      role:"User"
     };
-  
+    axios.post('http://127.0.0.1:8000/api/v1/register', formData).then((res)=>console.log(res.data))
     // Store the form data in localStorage
-    localStorage.setItem("formData", JSON.stringify(formData));
+    // localStorage.setItem("formData", JSON.stringify(formData));
   
     // Redirect or perform any other actions as needed
   };
@@ -67,7 +69,7 @@ function RegistrationForm() {
                 name="first_name"
                 value={first_name}
                 onChange={(e) => setFirstName(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -90,7 +92,7 @@ function RegistrationForm() {
                 name="last_name"
                 value={last_name}
                 onChange={(e) => setLastName(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -101,7 +103,7 @@ function RegistrationForm() {
                 name="gender"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                required
+                
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -118,7 +120,7 @@ function RegistrationForm() {
                 name="citizenship"
                 value={citizenship}
                 onChange={(e) => setCitizenship(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -131,7 +133,7 @@ function RegistrationForm() {
                   name="date_of_birth"
                   value={date_of_birth}
                   onChange={(e) => setDateOfBirth(e.target.value)}
-                  required
+                  
                 />
               </div>
               <div className={styles["form-group"]}>
@@ -142,7 +144,7 @@ function RegistrationForm() {
                   name="document_id"
                   value={document_id}
                   onChange={(e) => setDocumentId(e.target.value)}
-                  required
+                  
                 />
               </div>
 
@@ -154,7 +156,7 @@ function RegistrationForm() {
                   name="date_of_expiry"
                   value={date_of_expiry}
                   onChange={(e) => setDateOfExpiry(e.target.value)}
-                  required
+                  
                 />
               </div>
             </div>
@@ -170,7 +172,7 @@ function RegistrationForm() {
                 name="place_of_birth"
                 value={place_of_birth}
                 onChange={(e) => setPlaceOfBirth(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -182,7 +184,7 @@ function RegistrationForm() {
                 name="authority"
                 value={authority}
                 onChange={(e) => setAuthority(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -194,7 +196,7 @@ function RegistrationForm() {
                 name="date_of_issue"
                 value={date_of_issue}
                 onChange={(e) => setDateOfIssue(e.target.value)}
-                required
+                
               />
             </div>
 
@@ -229,7 +231,7 @@ function RegistrationForm() {
                 name="document_id"
                 value={document_id}
                 onChange={(e) => setDocumentId(e.target.value)}
-                required
+                
               />
             </div>
           </div>
@@ -247,7 +249,7 @@ function RegistrationForm() {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
+              
             />
           </div>
           <div className={styles["form-group"]}>
@@ -258,7 +260,7 @@ function RegistrationForm() {
               name="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              required
+              
             />
           </div>
           <div className={styles["form-group"]}>
@@ -269,7 +271,7 @@ function RegistrationForm() {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
+              
             />
           </div>
         </div>
@@ -297,6 +299,8 @@ function RegistrationForm() {
           Зарегестрироваться
         </button>
       </form>
+      <Link to={"/login"}>Login</Link>
+
     </div>
   );
 }
