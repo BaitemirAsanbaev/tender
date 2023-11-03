@@ -12,7 +12,7 @@ import CreateTender from "./pages/CreateTender";
 function App() {
   return (
     <div className="App">
-      {localStorage.getItem("token") ? (
+      {/* {localStorage.getItem("token") ? ( */}
         <>
           <Nav/>
           <Routes>
@@ -22,13 +22,13 @@ function App() {
             <Route path="/tender/create" element={<CreateTender />} />
           </Routes>
         </>
-      ) : (
+      {/* // ) : (
         <Routes>
           <Route path="*" element={<Redirect/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" index element={<Register />} />
-        </Routes>
-      )}
+        </Routes> */}
+      {/* // )} */}
     </div>
   );
 }
