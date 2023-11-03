@@ -7,6 +7,7 @@ import Redirect from "./pages/Redirect";
 import Tenders from "./pages/Tenders";
 import Nav from "./components/Nav/Nav";
 import Tender from "./pages/Tender";
+import CreateTender from "./pages/CreateTender";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/tender/:id" element={<Tender />} />
+            <Route path="/tender/create" element={<CreateTender />} />
           </Routes>
         </>
       ) : (
