@@ -9,6 +9,7 @@ export default function CreateTenderForm() {
     <form className={classes.CreateTenderForm}>
       <input type='text' id='title' name='title'/>
       <textarea id='description' name='description'></textarea>
+      <input type='file' accept='.pdf'/>
       <BlueButton event={createTender} >Create</BlueButton>
     </form>
   )
