@@ -1,14 +1,10 @@
 import React from 'react'
-import BlueButton from '../components/BlueButton/BlueButton'
+import CreateTenderForm from '../components/CreateTenderForm/CreateTenderForm'
 export default function CreateTender() {
   function createTender(){
     return
   }
   return (
-    <form>
-      <input type='text' id='title' name='title'/>
-      <textarea id='description' name='description'></textarea>
-      <BlueButton event={createTender} >Create</BlueButton>
-    </form>
+    <CreateTenderForm/>
   )
 }
