@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import cl from "./New.module.scss"
 
 const New = () => {
   return (
     <article className={cl.New}>
-      <h2>
+      <h2 className={cl.title}>
         Которнууга билдирмелер менен негиздөөчү документтерди Банкка жөнөтүү
         схемасы
       </h2>
@@ -15,7 +16,7 @@ const New = () => {
         by H. Rackham
       </p>
       <div className={cl.btn_more}>
-        <button>Читать...</button>
+        <Link to={"/"}>Читать...</Link>
         <p>21.10.2023</p>
       </div>
     </article>

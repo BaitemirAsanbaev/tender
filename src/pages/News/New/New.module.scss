@@ -3,8 +3,50 @@
   width: 625px;
   flex-direction: column;
   gap: 20px;
+  padding: 10px 20px;
+
+
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+
+  .title {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0 !important;
+  }
+  p {
+    color: #555;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
   .btn_more {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    a {
+      border-radius: 20px;
+      border: 1px solid #155da4;
+      width: 144px;
+      height: 33px;
+      padding: 5px 20px;
+      text-align: center;
+    }
+
+    p {
+      color: #000;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
   }
 }
