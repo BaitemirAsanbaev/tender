@@ -18,8 +18,8 @@ export default class Store {
   setUser(user) {
     this.user = user;
   }
-  setMessage(text){
-    this.message = text
+  setMessage(text) {
+    this.message = text;
   }
 
   async login(data) {
@@ -33,5 +33,8 @@ export default class Store {
       localStorage.setItem("access", res.data.access_token);
       localStorage.setItem("refresh", res.data.refresh_token);
     });
+  }
+  async logout() {
+    localStorage.clear();
   }
 }
