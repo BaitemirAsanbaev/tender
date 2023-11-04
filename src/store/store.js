@@ -1,12 +1,14 @@
 import axios from "axios";
 import { makeAutoObservable } from "mobx";
 import { api } from "../api";
+import { tenders } from "./tenders";
 
 export default class Store {
   constructor() {
     makeAutoObservable(this);
   }
   isAuthed = false;
+  tenders = [...tenders]
   user = {
     role: "company",
   };
@@ -20,6 +22,10 @@ export default class Store {
   }
   setMessage(text) {
     this.message = text;
+  }
+
+  setTenders(tenders){
+    this.tenders = tenders
   }
 
   async login(data) {

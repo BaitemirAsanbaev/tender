@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./CategorySearch.module.scss";
 import BlueButton from "../BlueButton/BlueButton";
 import { Link } from "react-router-dom";
 import { tenders } from "../../store/tenders";
+import { Context } from "../..";
 export default function CategorySearch() {
   const [value, setValue] = useState('')
-  const [searchResult, setSearchResult] = useState([])
  
-  
+  const {store} = useContext(Context)
   
   const categories = [
     { title: "Строительство и ремонт", path: "stroitelstvo-i-remont" },
@@ -58,7 +58,7 @@ export default function CategorySearch() {
   }
   
   function search() {
-    setSearchResult(searchByLetters(value, tenders))
+    store.setTenders(searchByLetters(value, tenders))
   }
   
   return (
@@ -81,33 +81,6 @@ export default function CategorySearch() {
               {item.title}
             </Link>
           );
-        })}
-      </div>
-      <div>
-        {searchResult.map((tender, id)=>{
-          return <div key={id}>
-          <h3>Tender Information</h3>
-          <ul>
-            <li>
-              <strong>Tender Number:</strong> {tender.number}
-            </li>
-            <li>
-              <strong>Name of Purchase:</strong> {tender.name_of_purchase}
-            </li>
-            <li>
-              <strong>Procuring Organization:</strong> {tender.procuring_organization}
-            </li>
-            <li>
-              <strong>Planned Amount:</strong> ${tender.planned_amount}
-            </li>
-            <li>
-              <strong>Publish Date:</strong> {tender.publish_date}
-            </li>
-            <li>
-              <strong>Deadline for Submission:</strong> {tender.deadline_for_submission}
-            </li>
-          </ul>
-        </div>
         })}
       </div>
     </div>

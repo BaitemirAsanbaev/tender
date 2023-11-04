@@ -1,12 +1,14 @@
-import React from "react";
-import { tenders } from "../../store/tenders";
+import React, { useContext } from "react";
 import classes from "./AllTenders.module.scss";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
-export default function AllTenders() {
+import { Context } from "../..";
+import { observer } from "mobx-react-lite";
+function AllTenders() {
+  const {store } = useContext(Context)
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 5; // Number of items to display per page
-  const data = [...tenders]; // Your data array to be paginated
+  const data = [...store.tenders]; // Your data array to be paginated
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -56,3 +58,4 @@ export default function AllTenders() {
     </div>
   );
 }
+export default observer(AllTenders)
