@@ -13,7 +13,7 @@ import WebcamCapture from "./pages/WebcamCapture";
 function App() {
   return (
     <div className="App">
-      {localStorage.getItem("access") ? (
+      {!localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>
