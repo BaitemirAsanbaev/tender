@@ -1,32 +1,20 @@
-import React, { useContext } from "react";
-import CreateButton from "../components/CreateButton/CreateButton";
-import Swiper from "../components/Swiper/Swiper";
-import { Context } from "..";
+import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
+import BlueButton from "../components/BlueButton/BlueButton";
+import axios from "axios";
+import { api } from "../api";
 
 function Tenders() {
-  const { store } = useContext(Context);
+  const [name, setName] =useState('')
+  function getTenders(){
+    axios.get(api + 'parse/tenders', {})
+  }
   return (
     <div className="page">
-      <button
-        onClick={() => {
-          store.setUser(
-            store.user.role === "company"
-              ? { role: "goverment" }
-              : { role: "company" }
-          );
-        }}
-      >
-        Switch
-      </button>
-      {store.user.role === "goverment" ? (
-        <>
-          <CreateButton>Открыть Тендер</CreateButton>
-          <Swiper />
-        </>
-      ) : (
-        <Swiper />
-      )}
+      <label>Кто тебя обидел?</label>
+      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name"/>
+      <BlueButton event={getTenders}>Get tenders from this mf</BlueButton>
+
     </div>
   );
 }
