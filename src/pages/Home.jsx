@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="page">
       <News />
-      <CategorySearch />
+      {/* <CategorySearch /> */}
       <AllTenders />
       <button onClick={store.logout}>Logout</button>
     </div>

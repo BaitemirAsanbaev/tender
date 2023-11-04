@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
-import classes from "./AllTenders.module.scss";
+import classes from "./AllTenders.scss";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
+
+import left from "../../assets/imag/left.png";
+import right from "../../assets/imag/right.png";
+
 function AllTenders() {
-  const {store } = useContext(Context)
+  const { store } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 5; // Number of items to display per page
+  const itemsPerPage = 8; // Number of items to display per page
   const data = [...store.tenders]; // Your data array to be paginated
 
   const handlePageChange = ({ selected }) => {
@@ -18,8 +22,8 @@ function AllTenders() {
   const currentPageData = data.slice(offset, offset + itemsPerPage);
 
   return (
-    <div className={classes.AllTenders}>
-      <table className={classes.tenderTable}>
+    <div className="AllTenders">
+      <table className="tenderTable">
         <thead>
           <tr>
             <th>Tender Number</th>
@@ -44,13 +48,13 @@ function AllTenders() {
         </tbody>
       </table>
       <ReactPaginate
-      className={classes.pagination}
-        previousLabel={"previous"}
-        nextLabel={"next"}
+        className="pagination"
+        previousLabel={<img src={left} alt="Previous" />}
+        nextLabel={<img src={right} alt="Next" />}
         breakLabel={"..."}
         pageCount={Math.ceil(data.length / itemsPerPage)}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={10}
         onPageChange={handlePageChange}
         containerClassName={"pagination"}
         activeClassName={"active"}
@@ -58,4 +62,4 @@ function AllTenders() {
     </div>
   );
 }
-export default observer(AllTenders)
+export default observer(AllTenders);

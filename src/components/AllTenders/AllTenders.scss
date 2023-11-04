@@ -1,13 +1,12 @@
 .AllTenders {
   display: flex;
   flex-direction: column;
-  // App.scss
 
   .tenderTable {
     margin: 20px auto;
     border-collapse: collapse;
     th {
-      background-color: #d7d7d7;
+      background-color: #d7d7d75a;
       color: #7e7e7e;
       font-size: 14px;
     }
@@ -16,12 +15,13 @@
     td {
       border: none;
 
-      padding: 30px;
+      padding: 15px 30px;
       text-align: left;
     }
 
     tr:nth-child(even) {
-      background-color: #f2f2f2;
+      // background-color: #f2f2f2be;
+      background: rgba(229, 229, 229);
     }
     tr:nth-child(odd) {
       background-color: #ffffff;
@@ -45,10 +45,9 @@
       margin: 0 5px;
       cursor: pointer;
       transition: background-color 0.2s;
-
-      &:hover {
-        background-color: #f0f0f0;
-      }
+      background-color: white;
+      color: #007bff;
+      border-radius: 50%;
 
       &.active {
         background-color: #007bff;
@@ -61,6 +60,10 @@
       padding: 8px 12px;
       text-decoration: none;
       color: #333;
+
+
     }
+
+  
   }
 }
