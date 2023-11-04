@@ -9,7 +9,7 @@ a {
   text-decoration: none;
 }
 .page {
-  max-width: 70vw;
+  max-width: 85%;
   margin: 0 auto;
   padding: 40px 0;
   display: flex;
