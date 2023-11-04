@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Redirect from "./pages/Redirect";
@@ -12,7 +12,7 @@ import CreateTender from "./pages/CreateTender";
 function App() {
   return (
     <div className="App">
-      {localStorage.getItem("access") ? (
+      {!localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>
