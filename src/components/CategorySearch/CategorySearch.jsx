@@ -60,6 +60,7 @@ export default function CategorySearch() {
   function search() {
     setSearchResult(searchByLetters(value, tenders))
   }
+  
   return (
     <div className={classes.CategorySearch}>
       <input
