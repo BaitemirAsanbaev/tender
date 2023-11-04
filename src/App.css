@@ -1,18 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-a{
-  color: #6499E9;
+a {
+  color: #6499e9;
   text-decoration: none;
 }
-.page{
+.page {
   max-width: 70vw;
   margin: 0 auto;
   padding: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+body {
+  background: linear-gradient(
+    0deg,
+    #155da4 55.66%,
+    rgba(255, 255, 255, 0.81) 107.47%
+  ); 
+  min-height:100vh;
 }

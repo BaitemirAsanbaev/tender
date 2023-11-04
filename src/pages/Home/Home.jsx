@@ -7,8 +7,8 @@ export default function Home() {
 
   return (
     <section  className={styles.Home} >
-      <div>Home</div>
      <News/>
+     
     </section>
   );
 }
