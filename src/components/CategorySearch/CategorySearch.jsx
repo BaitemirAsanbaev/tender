@@ -1,89 +1,12 @@
 import React, { useState } from "react";
 import classes from "./CategorySearch.module.scss";
 import BlueButton from "../BlueButton/BlueButton";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { tenders } from "../../store/tenders";
 export default function CategorySearch() {
-  const navigate = useNavigate()
   const [value, setValue] = useState('')
   const [searchResult, setSearchResult] = useState([])
-  const tenders = [
-    {
-      "number": "T12345",
-      "name_of_purchase": "Office Supplies",
-      "procuring_organization": "ABC Corporation",
-      "procurement_format": "Online Bidding",
-      "procurement_method": "Competitive Bidding",
-      "planned_amount": "25000",
-      "publish_date": "2023-11-04",
-      "deadline_for_submission": "2023-11-20",
-      "validity_period_for_supplier_offers": "2023-12-05",
-      "suppliers_offer_guarantee": "1500",
-      "official_information": "Please refer to the attached documents",
-      "instructions_for_preparing": "Follow the instructions in the RFP document",
-      "name_of_company": "XYZ Suppliers Inc.",
-      "actual_address": "123 Main Street, Cityville, State",
-      "work_phone": "123-456-7890",
-      "remaining_until_purchase": "20 days",
-      "complaints_quantity": 2
-    },
-    {
-      "number": "T54321",
-      "name_of_purchase": "Construction Materials",
-      "procuring_organization": "City Public Works Department",
-      "procurement_format": "Public Tender",
-      "procurement_method": "Open Bidding",
-      "planned_amount": "75000",
-      "publish_date": "2023-11-06",
-      "deadline_for_submission": "2023-11-25",
-      "validity_period_for_supplier_offers": "2023-12-10",
-      "suppliers_offer_guarantee": "3000",
-      "official_information": "Refer to the specifications and drawings",
-      "instructions_for_preparing": "Follow the bid submission guidelines",
-      "name_of_company": "ABC Construction Ltd.",
-      "actual_address": "456 Oak Avenue, Townsville, State",
-      "work_phone": "987-654-3210",
-      "remaining_until_purchase": "19 days",
-      "complaints_quantity": 1
-    },
-    {
-      "number": "T98765",
-      "name_of_purchase": "IT Services",
-      "procuring_organization": "Tech Solutions Inc.",
-      "procurement_format": "Request for Proposal",
-      "procurement_method": "Selective Bidding",
-      "planned_amount": "45000",
-      "publish_date": "2023-11-07",
-      "deadline_for_submission": "2023-11-22",
-      "validity_period_for_supplier_offers": "2023-12-03",
-      "suppliers_offer_guarantee": "2000",
-      "official_information": "Refer to the RFP document for details",
-      "instructions_for_preparing": "Submit your proposal as per the RFP guidelines",
-      "name_of_company": "Innovate IT Solutions",
-      "actual_address": "789 Elm Street, Techville, State",
-      "work_phone": "555-123-4567",
-      "remaining_until_purchase": "15 days",
-      "complaints_quantity": 0
-    },
-    {
-      "number": "T13579",
-      "name_of_purchase": "Medical Equipment",
-      "procuring_organization": "City Hospital",
-      "procurement_format": "Competitive Negotiation",
-      "procurement_method": "Direct Negotiation",
-      "planned_amount": "90000",
-      "publish_date": "2023-11-10",
-      "deadline_for_submission": "2023-11-30",
-      "validity_period_for_supplier_offers": "2023-12-15",
-      "suppliers_offer_guarantee": "5000",
-      "official_information": "Medical equipment specifications available on request",
-      "instructions_for_preparing": "Submit your proposal with relevant credentials",
-      "name_of_company": "MediTech Supplies",
-      "actual_address": "321 Hospital Drive, Health City, State",
-      "work_phone": "888-999-1234",
-      "remaining_until_purchase": "20 days",
-      "complaints_quantity": 3
-    }
-  ];
+ 
   
   
   const categories = [
@@ -161,7 +84,7 @@ export default function CategorySearch() {
       </div>
       <div>
         {searchResult.map((tender, id)=>{
-          return <div className="tender-card">
+          return <div key={id}>
           <h3>Tender Information</h3>
           <ul>
             <li>
