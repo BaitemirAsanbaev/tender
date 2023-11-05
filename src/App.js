@@ -10,6 +10,7 @@ import Tender from "./pages/Tender";
 import CreateTender from "./pages/CreateTender";
 import WebcamCapture from "./pages/WebcamCapture";
 import Raiting from "./pages/Raitings/Raiting";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="/scanner" element={<WebcamCapture />} />
             <Route path="/rate" element={<Raiting />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
