@@ -5,16 +5,21 @@ import axios from "axios";
 import { api } from "../api";
 
 function Tenders() {
-  const [name, setName] =useState('')
-  function getTenders(){
-    axios.get(api + 'parse/tenders', {})
+  const [name, setName] = useState("");
+  function getTenders() {
+    axios.get(api + "parse/tenders", {});
   }
   return (
     <div className="page">
       <label>Кто тебя обидел?</label>
-      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" id="name" name="name"/>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        type="text"
+        id="name"
+        name="name"
+      />
       <BlueButton event={getTenders}>Get tenders from this mf</BlueButton>
-
     </div>
   );
 }

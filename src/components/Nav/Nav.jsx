@@ -33,8 +33,15 @@ export default function Nav() {
 
         <li>
           <NavLink to={"/jal"} className={classes.logo}>
-            Жалобы
+            Инструкция
           </NavLink>
+        </li>
+
+        <li>
+          <NavLink to={"/rate"}>Планы</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/rate"}>Риски</NavLink>
         </li>
         <li>
           <NavLink to={"/rate"}>Рейтинги</NavLink>
