@@ -4,8 +4,10 @@ import NewsCard from "../NewsCard/NewsCard";
 import axios from "axios";
 import "swiper/css";
 import "swiper/css/navigation"; // Import the Swiper navigation module
-import "swiper/css/pagination"; 
+import "swiper/css/pagination";
 import classes from "./NewsSlider.module.scss";
+import { api } from "../../api";
+import New from "../../pages/News/New/New";
 
 export default function NewsSlider() {
   const [news, setNews] = useState([
@@ -67,28 +69,41 @@ export default function NewsSlider() {
   ]);
   // useEffect(() => {
   //   axios
-  //     .get("http://192.168.0.109:8000/api/v1/list/news")
+  //     .get(api+"list/news")
   //     .then((res) => {
   //       setNews(res.data)
   //       console.log(res.data[0].image);
   //     });
   // },[]);
-  console.log(news);
+  // console.log(news);
   return (
-    <Swiper
-      className={classes.NewsSlider}
-      spaceBetween={70}
-      slidesPerView={3}
-      autoplay={{ delay: 1000 }} 
-      navigation={true}
-    >
-      {news.map((item, id) => {
-        return (
-          <SwiperSlide key={id}>
-            <NewsCard data={item} />
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+    // <Swiper
+    //   className={classes.NewsSlider}
+    //   spaceBetween={70}
+    //   slidesPerView={3}
+    //   autoplay={{ delay: 1000 }}
+    //   // navigation={true}
+    // >
+    //   {news.map((item, id) => {
+    //     return (
+    //       <SwiperSlide key={id}>
+    //         <NewsCard data={item} />
+    //       </SwiperSlide>
+    //     );
+    //   })}
+    // </Swiper>
+
+    <section className={classes.News}>
+      <h2>News:</h2>
+      <div className={classes.inner_cont}>
+        {news.slice(0, 2).map((item, id) => {
+          return (
+            <section key={id}>
+              <New data={item} />
+            </section>
+          );
+        })}
+      </div>
+    </section>
   );
 }

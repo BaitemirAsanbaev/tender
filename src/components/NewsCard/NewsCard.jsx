@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./NewsCard.module.scss";
 import { Link } from "react-router-dom";
 export default function NewsCard({ data }) {
+  // console.log({data})
   return (
     <div className={classes.NewsCard}>
       <h2>{data.title}</h2>
@@ -9,7 +10,7 @@ export default function NewsCard({ data }) {
       <div>
         <Link to={`/news/${data.id}`}>Читать</Link>
         <span>{data.created_time}</span>
-      </div>{" "}
+      </div>
     </div>
   );
 }

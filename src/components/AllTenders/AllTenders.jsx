@@ -12,8 +12,8 @@ import right from "../../assets/imag/right.png";
 function AllTenders() {
   const { store } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 8; // Number of items to display per page
-  const data = [...store.tenders]; // Your data array to be paginated
+  const itemsPerPage = 8; 
+  const data = [...store.tenders]; 
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
