@@ -75,9 +75,9 @@ export default function CategorySearch() {
         <BlueButton event={search}>Найти</BlueButton>
       </div>
       <div>
-        {categories.map((item) => {
+        {categories.map((item, id) => {
           return (
-            <Link to={item.path} className={classes.category}>
+            <Link key={id} to={item.path} className={classes.category}>
               {item.title}
             </Link>
           );

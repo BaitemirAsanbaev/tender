@@ -1,0 +1,13 @@
+.NewsCard{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  >div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
