@@ -22,9 +22,7 @@ export default function Home() {
       <NewsSlider/>
       <CategorySearch />
       <AllTenders />
-
-<Kom/>
-      <button onClick={store.logout}>Logout</button>
+      {/* <button onClick={store.logout}>Logout</button> */}
     </div>
   );
 }

@@ -32,21 +32,21 @@ const {store} = useContext(Context)
   
     // Create an object to hold the form data
     const formData = {
-      first_name,
-      middle_name,
-      last_name,
-      gender,
-      citizenship,
-      date_of_birth,
-      document_id,
-      date_of_expiry,
-      place_of_birth,
-      authority,
-      date_of_issue,
-      ethnicity,
-      personal_number,
+      // first_name,
+      // middle_name,
+      // last_name,
+      // gender,
+      // citizenship,
+      // date_of_birth,
+      // document_id,
+      // date_of_expiry,
+      // place_of_birth,
+      // authority,
+      // date_of_issue,
+      // ethnicity,
+      // personal_number,
       email,
-      phone_number: phone,
+      // phone_number: phone,
       password,
       role:"User"
     };
@@ -56,6 +56,8 @@ const {store} = useContext(Context)
   return (
     <div className={styles["registration-form"]}>
       <h2>Регистрация по пасспорту</h2>
+      <Link to={"/scanner"}>Scan password</Link>
+
       <form onSubmit={handleSubmit}>
         <div className={styles[side === "front" ? "front-side" : "hide"]}>
           <div className={styles["photo"]}></div>
