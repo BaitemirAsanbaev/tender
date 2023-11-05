@@ -94,7 +94,8 @@ export default function NewsSlider() {
     // </Swiper>
 
     <section className={classes.News}>
-      <h2>News:</h2>
+      <div className={classes.head}><div className={classes.headBlock}><h2>Новости</h2></div></div>
+      
       <div className={classes.inner_cont}>
         {news.slice(0, 2).map((item, id) => {
           return (
