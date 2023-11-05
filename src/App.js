@@ -27,7 +27,7 @@ import Plans from "./pages/Plans/Plans";
 function App() {
   return (
     <div className="App">
-      {!localStorage.getItem("access") ? (
+      {localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>
