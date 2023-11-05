@@ -14,10 +14,10 @@ const Guide = () => {
   };
 
   useEffect(() => {
-    axios.get(api+"list/guide").then((res)=>{
+    axios.get(api + "list/guide").then((res) => {
       console.log(res.data);
-      setGuides(res.data)
-    })
+      setGuides(res.data);
+    });
   }, []);
 
   const doc = [
@@ -69,7 +69,10 @@ const Guide = () => {
         {selectedDoc && (
           <>
             <h2>{selectedDoc.title}</h2>
-            <p>{selectedDoc.content}</p>
+            <img width={400}
+              src="https://www.lifewire.com/thmb/kW6qmOK-xA4wXMtPShm-RV9cJRI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chrome-save-as-pdf-7b631e4c76bb4eb5a7afd9b67e729f8d.png"
+              alt=""
+            />
           </>
         )}
       </div>

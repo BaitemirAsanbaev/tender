@@ -36,6 +36,7 @@ export default class Store {
   }
   async register(data) {
     axios.post(api + "register", data).then((res) => {
+      console.log(api);
       localStorage.setItem("access", res.data.access_token);
       localStorage.setItem("refresh", res.data.refresh_token);
       console.log(res.data);

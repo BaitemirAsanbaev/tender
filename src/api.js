@@ -1,1 +1,1 @@
-export const api = "http://amitkurbanov.pythonanywhere.com/api/v1/";
+export const api = "http://192.168.223.191:8000/api/v1/";
