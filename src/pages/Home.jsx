@@ -6,6 +6,7 @@ import Swiper from "swiper";
 import axios from "axios";
 import { SwiperSlide } from "swiper/react";
 import NewsSlider from "../components/NewsSlider/NewsSlider";
+import intro from '../assets/imag/intro.png'
 // import News from "./News/News";
 
 
@@ -15,6 +16,7 @@ export default function Home() {
   
   return (
     <div className="page">
+      <img src={intro} alt="intro picture" width="100%" height="400px"/>
       {/* <News /> */}
       <NewsSlider/>
       <CategorySearch />

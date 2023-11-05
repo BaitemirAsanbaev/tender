@@ -4,6 +4,7 @@ import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Context } from "../..";
 import { observer } from "mobx-react-lite";
+import {Link} from 'react-router-dom'
 
 import left from "../../assets/imag/left.png";
 import right from "../../assets/imag/right.png";
@@ -23,6 +24,9 @@ function AllTenders() {
 
   return (
     <div className="AllTenders">
+      <div className="head">
+        <div className="headBlock"> <p className="headH">Тендеры</p> </div>
+      </div>
       <table className="tenderTable">
         <thead>
           <tr>
@@ -38,7 +42,7 @@ function AllTenders() {
           {currentPageData.map((tender, index) => (
             <tr key={index}>
               <td>{tender.number}</td>
-              <td>{tender.name_of_purchase}</td>
+              <td><Link to="#">{tender.name_of_purchase}</Link></td>
               <td>{tender.procuring_organization}</td>
               <td>${tender.planned_amount}</td>
               <td>{tender.publish_date}</td>
@@ -47,9 +51,10 @@ function AllTenders() {
           ))}
         </tbody>
       </table>
+      <div className="paginationDiv"> 
       <ReactPaginate
         className="pagination"
-        previousLabel={<img src={left} alt="Previous" />}
+        previousLabel={<img src={left} alt="Previous" width="30px" height="30px"/>}
         nextLabel={<img src={right} alt="Next" />}
         breakLabel={"..."}
         pageCount={Math.ceil(data.length / itemsPerPage)}
@@ -59,6 +64,7 @@ function AllTenders() {
         containerClassName={"pagination"}
         activeClassName={"active"}
       />
+      </div>
     </div>
   );
 }
