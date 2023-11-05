@@ -11,6 +11,7 @@ import CreateTender from "./pages/CreateTender";
 import WebcamCapture from "./pages/WebcamCapture";
 import Complaints from "./pages/Complaints";
 import CreateComplaint from "./pages/CreateComplaint";
+import Raiting from "./pages/Raitings/Raiting";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/scanner" element={<WebcamCapture />} />
+            <Route path="/rate" element={<Raiting />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
