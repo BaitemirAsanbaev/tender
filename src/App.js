@@ -21,18 +21,21 @@ import Ministr from "./pages/Raitings/Jalob/Ministr";
 import Budget from "./pages/Raitings/Jalob/Budget";
 import Zakup from "./pages/Raitings/Jalob/Zakup";
 import Postav from "./pages/Raitings/Jalob/Postav";
+import PostavRisks from "./pages/Risks/PostavRisks";
+import Plans from "./pages/Plans/Plans";
 
 function App() {
   return (
     <div className="App">
-      {localStorage.getItem("access") ? (
+      {!localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="*" element={<RedirectHome />} />
-            <Route path="/rate" element={<Raiting />} />
-            <Route path="/risks" element={<Risks/>} />
+            <Route path="/plans" element={<Plans   />} />
+            <Route path="/risks/zakup/" element={<Risks/>} />
+            <Route path="/risks/postav/" element={<PostavRisks/>} />
             <Route path='/rate/jalob/' element={<Jalob  />}/>
             <Route path='/rate/ministr/' element={<Ministr  />}/>
             <Route path='/rate/budget/' element={<Budget  />}/>

@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
-import classes from "./AllTenders.scss";
+import React from 'react'
+import classes from './Plans.module.scss'
+import AllTenders from '../../components/AllTenders/AllTenders'
+import { useContext } from "react";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Context } from "../..";
@@ -8,52 +10,48 @@ import {Link} from 'react-router-dom'
 
 import left from "../../assets/imag/left.png";
 import right from "../../assets/imag/right.png";
-import { useEffect } from "react";
-import axios from "axios";
-import { api } from "../../api";
 
-function AllTenders() {
+
+function Plans() {
   const { store } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 8; 
+  const data = [...store.tenders]; 
   const id = 1;
-  const [tenders, setTenders] = useState([])
-  const data = [...tenders]; 
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
-  useEffect(()=>{
-    axios.get(api + 'list/tender').then((res)=>{
-      console.log(res.data);
-      setTenders(res.data)
-    })
-  }, [])
 
   const offset = currentPage * itemsPerPage;
   const currentPageData = data.slice(offset, offset + itemsPerPage);
 
+
+  const name = 'Рейтинг тендеров'
+  const jal = '4,3'
+
   return (
-    <div className="AllTenders">
+    <div className={classes.wrap}>
+      <div className="AllTenders">
       <div className="head">
-        <div className="headBlock"> <p className="headH">Тендеры</p> </div>
+        <div className="headBlock"> <p className="headH">Планируемые тендеры</p> </div>
       </div>
       <table className="tenderTable">
         <thead>
           <tr>
-            <th>Tender Number</th>
-            <th>Name of Purchase</th>
-            <th>Procuring Organization</th>
-            <th>Planned Amount</th>
-            <th>Publish Date</th>
-            <th>Deadline for Submission</th>
+            <th>Номер тендера</th>
+            <th>Наименование тендера</th>
+            <th>Наименование организации</th>
+            <th>Планируемая сумма</th>
+            <th>Дата публикации</th>
+            <th>Срок подачи</th>
           </tr>
         </thead>
         <tbody>
           {currentPageData.map((tender, index) => (
             <tr key={index}>
               <td>{tender.number}</td>
-              <td><Link to={`tender/${id}`}>{tender.name_of_purchase}</Link></td>
+              <td><Link to={`/tender/1/`}>{tender.name_of_purchase}</Link></td>
               <td>{tender.procuring_organization}</td>
               <td>{tender.planned_amount} сом</td>
               <td>{tender.publish_date}</td>
@@ -77,6 +75,8 @@ function AllTenders() {
       />
       </div>
     </div>
-  );
+    </div>
+  )
 }
-export default observer(AllTenders);
+
+export default Plans

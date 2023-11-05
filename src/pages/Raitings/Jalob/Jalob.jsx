@@ -60,7 +60,7 @@ function Jalob() {
             <td>{tender.number}</td>
             <td><Link to={`tender/${id}`}>{tender.name_of_purchase}</Link></td>
             <td>{tender.procuring_organization}</td>
-            <td>${tender.planned_amount}</td>
+            <td>{tender.planned_amount} сом</td>
             <td>{tender.publish_date}</td>
             <td>{tender.deadline_for_submission}</td>
             <td className={classes.red}>{jal}</td>
