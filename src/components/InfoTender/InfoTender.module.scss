@@ -7,11 +7,12 @@
     background-color: white;
     min-height: 80vh;
     padding: 30px 20px;
+    margin-bottom: 30px;
 
     div {
       width: 98%;
       margin: 0 auto;
-      border: .5px solid gray;
+      border: 0.5px solid gray;
       display: flex;
       justify-content: space-between;
       // align-items: flex-start;
@@ -38,5 +39,23 @@
         line-height: normal;
       }
     }
+  }
+
+  .link {
+    color: #155da4;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px 25px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    width: 230px;
+    margin: 30px auto 0;
+
   }
 }

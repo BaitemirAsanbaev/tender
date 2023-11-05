@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cl from "./InfoTender.module.scss";
 
 const InfoTender = () => {
@@ -75,7 +76,10 @@ const InfoTender = () => {
           <h4> Осталось до закупки: </h4>
           <p> Тоолос айылный аймак с.Муркут </p>
         </div>
+      <Link to={"/"} className={cl.link}>подать жалобу</Link>
+
       </div>
+
     </section>
   );
 };
