@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 a {
   color: #6499e9;
@@ -18,11 +19,7 @@ a {
 }
 
 body {
-  background: linear-gradient(
-    0deg,
-    #155da4 55.66%,
-    rgba(255, 255, 255, 0.81) 107.47%
-  ); 
+  background: #6499e9;
   /* background-color: white; */
   min-height:100vh;
 }
