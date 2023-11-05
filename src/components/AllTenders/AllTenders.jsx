@@ -14,6 +14,7 @@ function AllTenders() {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 8; 
   const data = [...store.tenders]; 
+  const id = 1;
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
@@ -42,7 +43,7 @@ function AllTenders() {
           {currentPageData.map((tender, index) => (
             <tr key={index}>
               <td>{tender.number}</td>
-              <td><Link to="#">{tender.name_of_purchase}</Link></td>
+              <td><Link to={`tender/${id}`}>{tender.name_of_purchase}</Link></td>
               <td>{tender.procuring_organization}</td>
               <td>${tender.planned_amount}</td>
               <td>{tender.publish_date}</td>
