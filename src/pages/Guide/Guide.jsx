@@ -14,9 +14,10 @@ const Guide = () => {
   };
 
   useEffect(() => {
-    axios.get(api + "list/guide").then((res) => {
-      setGuides(res.data);
-    });
+    axios.get(api+"list/guide").then((res)=>{
+      console.log(res.data);
+      setGuides(res.data)
+    })
   }, []);
 
   const doc = [

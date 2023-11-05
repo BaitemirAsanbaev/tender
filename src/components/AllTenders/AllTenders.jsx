@@ -8,17 +8,27 @@ import {Link} from 'react-router-dom'
 
 import left from "../../assets/imag/left.png";
 import right from "../../assets/imag/right.png";
+import { useEffect } from "react";
+import axios from "axios";
+import { api } from "../../api";
 
 function AllTenders() {
   const { store } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 8; 
-  const data = [...store.tenders]; 
   const id = 1;
+  const [tenders, setTenders] = useState([])
+  const data = [...tenders]; 
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
+  useEffect(()=>{
+    axios.get(api + 'list/tender').then((res)=>{
+      console.log(res.data);
+      setTenders(res.data)
+    })
+  }, [])
 
   const offset = currentPage * itemsPerPage;
   const currentPageData = data.slice(offset, offset + itemsPerPage);
