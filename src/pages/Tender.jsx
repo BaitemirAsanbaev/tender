@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { data } from "../components/Swiper/demo";
-import RequestsList from "../components/RequestsList/RequestsList";
-import TenderInfo from "../components/TenderInfo/TenderInfo";
 import { Context } from "..";
-import RequestForm from "../components/RequestForm/RequestForm";
+
 import InfoTender from "../components/InfoTender/infoTender";
 
 export default function Tender() {
@@ -20,6 +18,8 @@ export default function Tender() {
     //   )}
     // </div>
 
-   <InfoTender/>
+    <>
+      <InfoTender />
+    </>
   );
 }
