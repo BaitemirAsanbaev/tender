@@ -7,6 +7,7 @@ import axios from "axios";
 import { SwiperSlide } from "swiper/react";
 import NewsSlider from "../components/NewsSlider/NewsSlider";
 import intro from '../assets/imag/intro.png'
+import Kom from "../components/Kom/Kom";
 // import News from "./News/News";
 
 
@@ -21,6 +22,8 @@ export default function Home() {
       <NewsSlider/>
       <CategorySearch />
       <AllTenders />
+
+<Kom/>
       <button onClick={store.logout}>Logout</button>
     </div>
   );

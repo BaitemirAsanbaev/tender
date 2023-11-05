@@ -41,10 +41,10 @@ export default function WebCam() {
     formData.append("video", videoBlob);
     console.log("sending...");
     axios
-      .post("http://192.168.0.100:8000", formData)
+      .post("http://local`host:8001", formData)
       .then((response) => {
         console.log("Video uploaded successfully");
-        console.log(response);
+        console.log('res', response);
       })
       .catch((error) => {
         console.error("Error uploading video:", error);
