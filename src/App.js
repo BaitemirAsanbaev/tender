@@ -14,6 +14,7 @@ import Raiting from "./pages/Raitings/Raiting";
 import Profile from "./pages/Profile/Profile";
 import {RedirectHome} from "./pages/Redirect";
 import {RedirectLogin} from "./pages/Redirect";
+import Guide from "./pages/Guide/Guide";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path="/rate" element={<Raiting />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/tenders" element={<Tenders />} />
+            <Route path="/guide" element={<Guide />} />
+
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
             <Route path="/complaints" element={<Complaints />} />
