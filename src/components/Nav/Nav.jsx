@@ -18,10 +18,10 @@ export default function Nav() {
           <NavLink to={"/rate"}>Планы</NavLink>
         </li>
         <li>
-          <NavLink to={"/rate"}>Риски</NavLink>
+          <NavLink to={"/risks"}>Риски</NavLink>
         </li>
         <li>
-          <NavLink to={"/rate"}>Рейтинги</NavLink>
+          <NavLink to={"/rate/jalob"}>Рейтинги</NavLink>
         </li>
         <li>
           <NavLink to={"profile"}>Профиль</NavLink>
