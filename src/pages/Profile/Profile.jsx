@@ -77,9 +77,9 @@ const Profile = () => {
               <p>{user.expiry}</p>
             </div>
           </div>
-
+          <button className={classes.btn} onClick={()=>localStorage.clear()}> Logout</button>
         </div>
-        <button onClick={()=>localStorage.clear()}> Logout</button>
+        
 
       </div>
   );

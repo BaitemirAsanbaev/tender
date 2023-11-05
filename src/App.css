@@ -20,6 +20,7 @@ a {
 
 body {
   background: #ffffff;
+  background: linear-gradient(0deg, #155DA4 0%, rgba(255, 255, 255, 0.81) 112.58%);
   /* background-color: white; */
   min-height:100vh;
 }
