@@ -1,1 +1,1 @@
-export const api = "https://amitkurbanov.pythonanywhere.com/api/v1/";
+export const api = "http://amitkurbanov.pythonanywhere.com/api/v1/";

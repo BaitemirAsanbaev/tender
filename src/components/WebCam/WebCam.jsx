@@ -1,19 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import RecordRTC from "recordrtc";
 import axios from "axios";
 import classes from "./WebCam.module.scss";
+import { Context } from "../..";
+import { useNavigate } from "react-router-dom";
+import BlueButton from "../BlueButton/BlueButton";
 export default function WebCam() {
   const webcamRef = useRef(null);
   const [recording, setRecording] = useState(false);
   const [recordedVideo, setRecordedVideo] = useState(null);
   let mediaRecorder = null;
-
+  const { store } = useContext(Context);
+  const navigate = useNavigate();
   const videoConstraints = {
     width: 1280,
     height: 720,
   };
-
+  function register(){
+    store.register({ email: "unique4312@gmail.com", password: "123123", role: "User" })
+  }
   const startRecording = () => {
     mediaRecorder = new RecordRTC(webcamRef.current.stream, {
       type: "video",
@@ -32,7 +38,7 @@ export default function WebCam() {
 
       // Now, you can send the recorded video to your server using Axios
       sendVideoToServer(blob);
-      setTimeout(()=>window.scrollTo(0, document.body.scrollHeight), 1000)
+      setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 1000);
     });
   };
 
@@ -49,6 +55,7 @@ export default function WebCam() {
       .catch((error) => {
         console.error("Error uploading video:", error);
       });
+      
   };
   return (
     <div className={classes.WebCam}>
@@ -62,12 +69,15 @@ export default function WebCam() {
       />
 
       {!recording ? (
-        <button className={classes.btn} onClick={startRecording}>Start</button>
+        <button className={classes.btn} onClick={startRecording}>
+          Start
+        </button>
       ) : (
-        <div className={classes.rec}></div>  
+        <div className={classes.rec}></div>
       )}
 
       {recordedVideo && <video controls src={recordedVideo} />}
+      <button className={classes.register_btn} onClick={register}>Register</button>
     </div>
   );
 }

@@ -38,7 +38,8 @@ export default class Store {
     axios.post(api + "register", data).then((res) => {
       localStorage.setItem("access", res.data.access_token);
       localStorage.setItem("refresh", res.data.refresh_token);
-    });
+      console.log(res.data);
+    })
   }
   async logout() {
     localStorage.clear();

@@ -76,10 +76,11 @@ const Profile = () => {
               <p>Дата окончания паспорта</p>
               <p>{user.expiry}</p>
             </div>
-            
-            
           </div>
+
         </div>
+        <button onClick={()=>localStorage.clear()}> Logout</button>
+
       </div>
   );
 };
