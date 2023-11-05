@@ -9,13 +9,15 @@ import Nav from "./components/Nav/Nav";
 import Tender from "./pages/Tender";
 import CreateTender from "./pages/CreateTender";
 import WebcamCapture from "./pages/WebcamCapture";
+import Complaints from "./pages/Complaints";
+import CreateComplaint from "./pages/CreateComplaint";
 import Raiting from "./pages/Raitings/Raiting";
 import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
     <div className="App">
-      {!localStorage.getItem("access") ? (
+      {localStorage.getItem("access") ? (
         <>
           <Nav />
           <Routes>
@@ -26,6 +28,8 @@ function App() {
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
+            <Route path="/complaints" element={<Complaints />} />
+            <Route path="/complaints/create" element={<CreateComplaint />} />
           </Routes>
         </>
       ) : (

@@ -1,0 +1,29 @@
+/* Define your SCSS styles here */
+.complaint-form {
+    padding: 20px;
+    border-radius: 5px;
+  
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  }
+  
