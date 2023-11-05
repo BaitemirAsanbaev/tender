@@ -63,16 +63,18 @@ export default function CategorySearch() {
   
   return (
     <div className={classes.CategorySearch}>
-      <input
-      value={value}
-      onChange={(e)=>setValue(e.target.value)}
-        placeholder="Что вам надо ?"
-        type="text"
-        name="search"
-        id="search"
-      />
-      <div>
-        <BlueButton event={search}>Найти</BlueButton>
+      <div className="form">
+        <input
+        value={value}
+        onChange={(e)=>setValue(e.target.value)}
+          placeholder="Что вам надо ?"
+          type="text"
+          name="search"
+          id="search"
+          className="inp"
+        />
+        <BlueButton className="find" event={search}>Найти</BlueButton>
+        
       </div>
       <div>
         {categories.map((item, id) => {
