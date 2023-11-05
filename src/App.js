@@ -11,10 +11,16 @@ import WebcamCapture from "./pages/WebcamCapture";
 import Complaints from "./pages/Complaints";
 import CreateComplaint from "./pages/CreateComplaint";
 import Raiting from "./pages/Raitings/Raiting";
+import Risks from "./pages/Risks/Risks";
 import Profile from "./pages/Profile/Profile";
 import {RedirectHome} from "./pages/Redirect";
 import {RedirectLogin} from "./pages/Redirect";
 import Guide from "./pages/Guide/Guide";
+import Jalob from "./pages/Raitings/Jalob/Jalob";
+import Ministr from "./pages/Raitings/Jalob/Ministr";
+import Budget from "./pages/Raitings/Jalob/Budget";
+import Zakup from "./pages/Raitings/Jalob/Zakup";
+import Postav from "./pages/Raitings/Jalob/Postav";
 
 function App() {
   return (
@@ -26,11 +32,18 @@ function App() {
             <Route path="/" index element={<Home />} />
             <Route path="*" element={<RedirectHome />} />
             <Route path="/rate" element={<Raiting />} />
+            <Route path="/risks" element={<Risks/>} />
+            <Route path='/rate/jalob/' element={<Jalob  />}/>
+            <Route path='/rate/ministr/' element={<Ministr  />}/>
+            <Route path='/rate/budget/' element={<Budget  />}/>
+            <Route path='/rate/zakup/' element={<Zakup  />}/>
+            <Route path='/rate/postav/' element={<Postav  />}/>
             <Route path="/profile" element={<Profile />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/guide" element={<Guide />} />
 
             <Route path="/tender/:id" element={<Tender />} />
+            <Route path="/rate/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
             <Route path="/complaints" element={<Complaints />} />
             <Route path="/complaints/create" element={<CreateComplaint />} />
