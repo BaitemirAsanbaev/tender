@@ -9,6 +9,7 @@ import Nav from "./components/Nav/Nav";
 import Tender from "./pages/Tender";
 import CreateTender from "./pages/CreateTender";
 import WebcamCapture from "./pages/WebcamCapture";
+import Raiting from "./pages/Raitings/Raiting";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/" index element={<Home />} />
             <Route path="/scanner" element={<WebcamCapture />} />
+            <Route path="/rate" element={<Raiting />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
