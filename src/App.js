@@ -13,6 +13,7 @@ import Complaints from "./pages/Complaints";
 import CreateComplaint from "./pages/CreateComplaint";
 import Raiting from "./pages/Raitings/Raiting";
 import Profile from "./pages/Profile/Profile";
+import Guide from "./pages/Guide/Guide";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/rate" element={<Raiting />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/tenders" element={<Tenders />} />
+            <Route path="/guide" element={<Guide />} />
+
             <Route path="/tender/:id" element={<Tender />} />
             <Route path="/tender/create" element={<CreateTender />} />
             <Route path="/complaints" element={<Complaints />} />

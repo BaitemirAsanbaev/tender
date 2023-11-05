@@ -1,0 +1,43 @@
+.CreateTenderForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70%;
+  width: 80%;
+  margin: 0 auto;
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-bottom: 1px solid;
+    padding: 20px 0;
+
+    input {
+      width: 410px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.cont {
+  width: 1250px;
+  height: 672px;
+  flex-shrink: 0;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 50px;
+
+  h2{
+      text-align: center;
+      margin: 20px 0;
+      padding: 40px 0 0  0;
+  }
+}

@@ -9,7 +9,7 @@ export default function Nav() {
         </li>
 
         <li>
-          <NavLink to={"/jal"} className={classes.logo}>
+          <NavLink to={"/guide"} className={classes.logo}>
             Инструкция
           </NavLink>
         </li>
