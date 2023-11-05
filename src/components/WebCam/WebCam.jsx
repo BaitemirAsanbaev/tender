@@ -17,8 +17,26 @@ export default function WebCam() {
     width: 1280,
     height: 720,
   };
+  function generateRandomGmailEmail() {
+    // Characters that can be used in the username
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  
+    // Generate a random username with a length between 6 and 10 characters
+    const usernameLength = Math.floor(Math.random() * 5) + 6;
+    let username = '';
+    for (let i = 0; i < usernameLength; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      username += characters.charAt(randomIndex);
+    }
+  
+    // Combine username with "gmail.com" to form the email address
+    const email = `${username}@gmail.com`;
+  
+    return email;
+  }
   function register(){
-    store.register({ email: "unique4312@gmail.com", password: "123123", role: "User" })
+    const email = generateRandomGmailEmail()
+    store.register({ email, password: "123123", role: "User" })
   }
   const startRecording = () => {
     mediaRecorder = new RecordRTC(webcamRef.current.stream, {
