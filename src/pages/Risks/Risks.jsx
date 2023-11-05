@@ -33,15 +33,12 @@ function Risks() {
   return (
     <div className={classes.wrap}>
       <div className={classes.choose}>
-        <div><p>по Министерствам</p></div>
-        <div><p>по Закуп. организациям</p></div>
-        <div><p>по Поставщикам</p></div>
-        <div className={classes.active}><p>по Жалобам</p></div>
-        <div><p>по Бюджету</p></div>
+        <div className={classes.active}><Link to='/risks/zakup/'>по Закуп. организациям</Link></div>
+        <div><Link to="/risks/postav/">по Поставщикам</Link></div>
       </div>
       <div className="AllTenders">
       <div className="head">
-        <div className="headBlock"> <p className="headH">Тендеры</p> </div>
+        <div className="headBlock"> <p className="headH">Риски</p> </div>
       </div>
       <table className="tenderTable">
         <thead>
@@ -61,7 +58,7 @@ function Risks() {
               <td>{tender.number}</td>
               <td><Link to={`tender/${id}`}>{tender.name_of_purchase}</Link></td>
               <td>{tender.procuring_organization}</td>
-              <td>${tender.planned_amount}</td>
+              <td>{tender.planned_amount} сом</td>
               <td>{tender.publish_date}</td>
               <td>{tender.deadline_for_submission}</td>
               <td className={classes.red}>{jal}</td>

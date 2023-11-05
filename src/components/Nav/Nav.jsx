@@ -7,18 +7,16 @@ export default function Nav() {
         <li>
           <NavLink to={"/"}> Главная</NavLink>
         </li>
-
         <li>
           <NavLink to={"/guide"} className={classes.logo}>
             Инструкция
           </NavLink>
         </li>
-
         <li>
-          <NavLink to={"/rate"}>Планы</NavLink>
+          <NavLink to={"/plans"}>Планы</NavLink>
         </li>
         <li>
-          <NavLink to={"/risks"}>Риски</NavLink>
+          <NavLink to={"/risks/zakup/"}>Риски</NavLink>
         </li>
         <li>
           <NavLink to={"/rate/jalob"}>Рейтинги</NavLink>

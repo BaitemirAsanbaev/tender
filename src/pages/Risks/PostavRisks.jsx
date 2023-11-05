@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
-import classes from "./AllTenders.scss";
+import React from 'react'
+import classes from './Risks.module.scss'
+import AllTenders from '../../components/AllTenders/AllTenders'
+import { useContext } from "react";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Context } from "../..";
@@ -8,45 +10,46 @@ import {Link} from 'react-router-dom'
 
 import left from "../../assets/imag/left.png";
 import right from "../../assets/imag/right.png";
-import { useEffect } from "react";
-import axios from "axios";
-import { api } from "../../api";
 
-function AllTenders() {
+
+function PostavRisks() {
   const { store } = useContext(Context);
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 8; 
+  const data = [...store.tenders]; 
   const id = 1;
-  const [tenders, setTenders] = useState([])
-  const data = [...tenders]; 
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
-  useEffect(()=>{
-    axios.get(api + 'list/tender').then((res)=>{
-      console.log(res.data);
-      setTenders(res.data)
-    })
-  }, [])
 
   const offset = currentPage * itemsPerPage;
   const currentPageData = data.slice(offset, offset + itemsPerPage);
 
+
+  const name = 'Рейтинг тендеров'
+  const jal = '4,3'
+
   return (
-    <div className="AllTenders">
+    <div className={classes.wrap}>
+      <div className={classes.choose}>
+        <div ><Link to='/risks/zakup/'>по Закуп. организациям</Link></div>
+        <div className={classes.active}><Link to="/risks/postav/">по Поставщикам</Link></div>
+      </div>
+      <div className="AllTenders">
       <div className="head">
-        <div className="headBlock"> <p className="headH">Тендеры</p> </div>
+        <div className="headBlock"> <p className="headH">Риски</p> </div>
       </div>
       <table className="tenderTable">
         <thead>
           <tr>
-            <th>Tender Number</th>
-            <th>Name of Purchase</th>
-            <th>Procuring Organization</th>
-            <th>Planned Amount</th>
-            <th>Publish Date</th>
-            <th>Deadline for Submission</th>
+            <th>Номер тендера</th>
+            <th>Наименование тендера</th>
+            <th>Наименование организации</th>
+            <th>Планируемая сумма</th>
+            <th>Дата публикации</th>
+            <th>Срок подачи</th>
+            <th>Риски</th>
           </tr>
         </thead>
         <tbody>
@@ -58,6 +61,7 @@ function AllTenders() {
               <td>{tender.planned_amount} сом</td>
               <td>{tender.publish_date}</td>
               <td>{tender.deadline_for_submission}</td>
+              <td className={classes.red}>{jal}</td>
             </tr>
           ))}
         </tbody>
@@ -77,6 +81,8 @@ function AllTenders() {
       />
       </div>
     </div>
-  );
+    </div>
+  )
 }
-export default observer(AllTenders);
+
+export default PostavRisks
