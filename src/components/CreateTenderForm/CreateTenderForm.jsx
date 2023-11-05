@@ -19,22 +19,22 @@ export default function CreateTenderForm() {
       
           <label htmlFor="">
             Тема поправки:
-            <input type="text" placeholder="Купить красные книги" />
+            <input type="text" placeholder="Купить книги" />
           </label>
           <label htmlFor="">
             Подробное описание:
-            <input type="text" placeholder="Купить красные книги" />
+            <input type="text" placeholder="Купить красные книги автора Пушкина" />
           </label>
           <label htmlFor="">
             Номер телефона:
-            <input type="text" placeholder="Купить красные книги" />
+            <input type="text" placeholder="0 999 99 99 99" />
           </label>
 
           <label>
-            Осталось до закупки:
-            <input type="text" placeholder="12 xfc" />
+            Осталось до публикации:
+            <input type="text" placeholder="12 дней" />
           </label>
- 
+          <button type="submit" className={classes.btn}>Отправить</button>
       </form>
     </section>
   );

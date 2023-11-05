@@ -36,7 +36,7 @@ const InfoTender = () => {
         </div>
         <div>
           <h4> Срок действия предложений поставщиков: </h4>
-          <p> Отклонён </p>
+          <p> 1 неделя</p>
         </div>
         <div>
           <h4> Гарантийное обеспечение предложения поставщика: </h4>
@@ -69,7 +69,7 @@ const InfoTender = () => {
           <h4> Осталось до закупки: </h4>
           <p> 3 дня </p>
         </div>
-      <Link to={"/"} className={cl.link}>подать жалобу</Link>
+      <Link to={"/tender/create/"} className={cl.link}>подать жалобу</Link>
 
       </div>
 
